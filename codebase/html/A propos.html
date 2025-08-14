@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>A propos</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+        background: linear-gradient(to right, #2193b0, #ffffff);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    header {
+            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+            margin-bottom: 20px;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        .intro {
+            text-align: center;
+            padding: 20px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+        .navbar nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+        .navbar button {
+            margin: 0;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .navbar button a {
+            text-decoration: none;
+            color: #008b7e;
+            font-size: 0.9rem;
+        }
+        .navbar button:hover a {
+            color: #00c9a7;
+        }
+        .navbar button:active {
+            transform: translateY(0);
+        }
+        main{
+            margin : auto ;
+        }
+        footer{
+            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+            margin-bottom: 20px;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        
+        button {
+            margin: 0;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-left : 35%;
+        }
+        button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        button a {
+            text-decoration: none;
+            color: #008b7e;
+            font-size: 0.9rem;
+        }
+        button:hover a {
+            color: #00c9a7;
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: dark;
+            text-align : center;
+        }
+        span{
+            color: #fff;
+        }
+        p{
+            text-indent: 12px;
+        }
+  </style>
+</head>
+<body>
+    <header>
+       <div class="intro">
+        <img src="" alt="">
+        <h1>
+            Congo-santé 
+        </h1>
+        </div>
+        <div class="navbar">
+            <nav>
+                <button>
+                    <a href="">Accueil</a>
+                </button>
+                <button>
+                    <a href="">
+                        Article santé 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        conseils et prévention 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        Témoignages 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        vidéo 
+                    </a>
+                </button>
+                <button>
+                    <a href="">FAQ</a>
+                </button>
+                <button>
+                    <a href="">
+                        Contact 
+                    </a>
+                </button>
+            </nav>
+        </div> 
+    </header>
+    <main>
+        <div>
+            <h1>
+                À propos de Congo Santé  
+            </h1>
+            <p>
+                <span>Congo Santé </span> est une initiative éducative et citoyenne visant à informer, sensibiliser et accompagner les jeunes et les adultes congolais autour des questions de santé physique, mentale et communautaire.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="dedicace">
+            <p>Congo-santé - Eduquer,sensibilisé et accompagner</p>
+        </div>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./A propos.html"> A propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
+            <li><a href="mailto:">Contactez-nous</a></li>
+            <li><a href="tel:+243">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook/" target="_blank" title="facebook" class="reseau-link">
+                        <i class="fab fa-facebook"></i> Github
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>© Copyright Congo-santé 2025. Tous droits réservés. </p>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+    </body>
+    
+    </html>

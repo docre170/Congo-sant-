@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title> index</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #00c9a7, #92fe9d);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+            margin-bottom: 20px;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        .intro {
+            text-align: center;
+            padding: 20px 0;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+        .navbar nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+        .navbar button {
+            margin: 0;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .navbar button a {
+            text-decoration: none;
+            color: #008b7e;
+            font-size: 0.9rem;
+        }
+        .navbar button:hover a {
+            color: #00c9a7;
+        }
+        .navbar button:active {
+            transform: translateY(0);
+        }
+        main{
+            margin : auto ;
+        }
+        footer{
+            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+            margin-bottom: 20px;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+        
+        button {
+            margin: 0;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-left : 35%;
+        }
+        button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        button a {
+            text-decoration: none;
+            color: #008b7e;
+            font-size: 0.9rem;
+        }
+        button:hover a {
+            color: #00c9a7;
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #fff;
+            text-align : center;
+        }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="intro">
+        <img src="" alt="">
+        <h1>
+            Congo-santé 
+        </h1>
+        </div>
+        <div class="navbar">
+            <nav>
+                <button>
+                    <a href="">Accueil</a>
+                </button>
+                <button>
+                    <a href="">A propos</a>
+                </button>
+                <button>
+                    <a href="">
+                        Article santé 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        conseils et prévention 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        Témoignages 
+                    </a>
+                </button>
+                <button>
+                    <a href="">
+                        vidéo 
+                    </a>
+                </button>
+                <button>
+                    <a href="">FAQ</a>
+                </button>
+                <button>
+                    <a href="">
+                        Contact 
+                    </a>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+            <img src="/storage/emulated/0/Congo santé /images/copilot_image_1754814139129.jpeg" alt="image interactive">
+            <p>
+                <button>
+                    <a href="">
+                        En savoir plus 
+                    </a>
+                </button>
+            </p>
+        </div>
+        <div class="présentation">
+           <h1>
+               Bienvenue sur Congo-santé 
+           </h1> 
+           <p>
+               Un site pour informer, prévenir et éduquer sur la santé au Congo avec des articles, conseils, témoignages et plus encore.
+           </p>
+           <p>
+               <button>
+                   <a href="">
+                       lire un article 
+                   </a>
+               </button>
+           </p>
+           <p>
+               <img src=" /storage/emulated/0/Congo santé /images/copilot_image_1754815279536.jpeg" alt="">
+              
+           </p>
+        </div>
+        <div class="apercu" style="padding: 20px; font-family: Arial, sans-serif;" >
+ <h2>Les maladies courantes : ce qu’il faut savoir pour mieux les éviter</h2>
+  <p>Nous tombons tous malades de temps en temps. Mais certaines maladies reviennent souvent et touchent beaucoup de personnes. Ce sont ce qu’on appelle <strong>les maladies courantes</strong>. Connaître ces maladies permet de mieux les prévenir et de mieux réagir quand elles arrivent.</p>
+
+  <h3>1. Le rhume</h3>
+  <ul>
+    <li>Nez qui coule ou bouché</li>
+    <li>Maux de gorge</li>
+    <li>Éternuements</li>
+    <li>Parfois fièvre légère</li>
+  </ul>
+  <p><strong>Prévention :</strong> se laver les mains souvent, éviter de se toucher le visage, bien se couvrir.</p>
+  <p><em>Bon à savoir :</em> le rhume ne se soigne pas avec des antibiotiques.</p>
+
+  <h3>2. Le paludisme (malaria)</h3>
+  <ul>
+    <li>Fièvre élevée</li>
+    <li>Frissons</li>
+    <li>Douleurs au corps</li>
+    <li>Fatigue intense</li>
+  </ul>
+  <p><strong>Prévention :</strong> moustiquaire, spray anti-moustique, éliminer l’eau stagnante.</p>
+  <p>
+      <button >
+          <a href="">En savoir plus</a>
+      </button>
+  </p>
+        </div>
+        <div class="rubrique">
+            <h2>
+                avez-vous des questions ?
+            </h2>
+            <p>
+                Si , vous avez des questions n'
+                hésitez surtout pas à nous contacter ou à nous écrire grâce à notre page <a href=""> faq </a> 
+             .</p>
+             <p>Nous sommes là pour vous et surtout n'oubliez pas <i>"Un dépistage à temps peut sauver une vie."  et " La vaccination protège vous et ceux que vous aimez."   </i>  Congo-santé
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div>
+        <h3>
+            lien utile 
+        </h3>
+        <p>
+            <nav>
+                <a href="">Accueil</a>
+                <a href="">Article s</a>
+                <a href="">Contact</a>
+            </nav>
+        </p>
+        </div>
+        <div>
+            <h2>
+                Adresse email/ contact 
+            </h2>
+            <p>
+                <a href="mailto:"></a>
+                <a href="tel"></a>
+            </p>
+        </div>
+        <div>
+            <h2>
+                Réseaux sociaux :
+            </h2>
+            <ul>
+                <li>
+                    
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        <div>
+            &copy; Congo-santé 2025
+        </div>
+    </footer>
+</body>
+<script>
+    
+</script>
+</html>
