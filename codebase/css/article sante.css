@@ -1,0 +1,231 @@
+/* pour le corps de lage */
+body {
+    /* pour la couleur de fonds */
+    background: linear-gradient(to right, #00c9a7, #92fe9d);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif, 'Times New Roman', Times, serif;
+}
+/* pour l' entete du body */
+header {
+    background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+    margin-bottom: 20px;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.intro {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.navbar button {
+    margin: 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar button:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar button a {
+    text-decoration: none;
+    color: #008b7e;
+    font-size: 0.9rem;
+}
+
+.navbar button:hover a {
+    color: #00c9a7;
+}
+
+.navbar button:active {
+    transform: translateY(0);
+}
+
+main {
+    margin-bottom: 25px;
+
+}
+
+footer {
+    background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+    margin-bottom: 20px;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+button {
+    margin: 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 500px;
+}
+
+button:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button a {
+    text-decoration: none;
+    color: #008b7e;
+    font-size: 0.9rem;
+}
+
+button:hover a {
+    color: #00c9a7;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+img:hover {
+    height: auto;
+}
+
+.ero {
+    margin-left: 500px;
+    padding: 20px 0;
+}
+
+span {
+    color: #008b7e;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+    text-indent: 12px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    text-decoration: underline;
+    text-transform: capitalize;
+    margin-right: 20px;
+    padding: 15px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+h2 {
+    margin-left: 20px;
+    padding: 20px;
+}
+
+main a {
+    text-decoration: underline;
+    color: darkred;
+}
+
+main a:hover {
+    text-decoration: solid;
+}
+
+footer ul li {
+    list-style: circle;
+}
+
+footer ul li:hover {
+    list-style: armenian;
+}
+
+footer ul li a {
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: dashed;
+}
+
+.copy {
+    text-align: center;
+    font-weight: bold;
+}
+
+.copy:hover {
+    color: black;
+}

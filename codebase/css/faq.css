@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(to right, #00c9a7, #92fe9d);
+}
+
+.faq {
+    max-width: 700px;
+    margin: auto;
+}
+
+.faq h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.question {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #2c7be5;
+}
+
+.answer {
+    display: none;
+    padding: 10px;
+    background-color: #e9f5ff;
+    border-left: 5px solid #92fe9d;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .faq {
+        max-width: 95vw;
+        padding: 10px;
+    }
+    body {
+        margin: 10px;
+    }
+    .question, .answer {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+footer {
+    background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+    color: #fff;
+    margin: 30px 0 0 0;
+    padding: 25px 0 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    text-align: center;
+}
+
+footer nav ul,
+footer > ul,
+footer .reseau ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer nav ul li,
+footer > ul li,
+footer .reseau ul li {
+    margin: 0 8px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #2c7be5;
+    text-decoration: underline;
+}
+
+footer .dedicace {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+footer .reseau {
+    margin: 10px 0 0 0;
+}
+
+footer .reseau-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.05rem;
+}
+
+footer i.fab {
+    font-size: 1.2em;
+    margin-right: 4px;
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.95rem;
+        padding: 18px 0 6px 0;
+    }
+    footer nav ul,
+    footer > ul,
+    footer .reseau ul {
+        flex-direction: column;
+        gap: 7px;
+    }
+    footer .dedicace {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 500px) {
+    .faq {
+        max-width: 100vw;
+        padding: 2vw;
+    }
+    .faq h2 {
+        font-size: 1.2rem;
+    }
+    .question, .answer {
+        font-size: 0.95rem;
+        padding: 6px;
+        margin: 6px 0;
+    }
+}

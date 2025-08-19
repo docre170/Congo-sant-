@@ -1,284 +1,535 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title> index</title>
     <style>
         body {
-            background: linear-gradient(to right, #00c9a7, #92fe9d);
+            background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            color: #222;
+            min-height: 100vh;
         }
+
         header {
             background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 20px;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            padding: 0 0 10px 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
+
         header::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
         }
+
         .intro {
-            text-align: center;
-            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            padding: 24px 0 10px 0;
             color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
         }
+
+        .ima {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
         header h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            letter-spacing: 1px;
-            font-weight: 700;
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 1.5px;
+            font-weight: 800;
             color: #fff;
         }
+
         .navbar {
             display: flex;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px;
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.13);
+            padding: 12px 0;
+            backdrop-filter: blur(6px);
+            border-radius: 10px;
             margin: 0 auto;
-            max-width: 90%;
+            max-width: 92%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
+
         .navbar nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
         }
+
         .navbar button {
             margin: 0;
-            padding: 8px 15px;
+            padding: 8px 22px;
             border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.92);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s cubic-bezier(.4,0,.2,1);
             font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
+
         .navbar button:hover {
             background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
         }
+
         .navbar button a {
             text-decoration: none;
             color: #008b7e;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
+
         .navbar button:hover a {
             color: #00c9a7;
         }
-        .navbar button:active {
+
+        main {
+            margin-bottom: 30px;
+        }
+
+        section {
+            margin-bottom: 36px;
+            background: rgba(0,139,126,0.93);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 32px 36px 28px 36px;
+            color: #fff;
+            transition: box-shadow 0.2s;
+        }
+
+        section:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            justify-content: flex-start;
+        }
+
+        .ero {
+            width: 220px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .présentation img.ero {
+            margin-top: 18px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 1.2px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-left: 0;
+            padding: 0 0 12px 0;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+        }
+
+        h3 {
+            text-decoration: underline;
+            text-transform: capitalize;
+            margin-right: 0;
+            padding: 10px 0 6px 0;
+            color: #feb47b;
+        }
+
+        span {
+            color: #ffeb3b;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        p {
+            text-indent: 0;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+
+        main a {
+            text-decoration: underline;
+            color: #ffeb3b;
+            transition: color 0.2s;
+        }
+
+        main a:hover {
+            color: #feb47b;
+            text-decoration: underline wavy;
+        }
+
+        button {
+            margin: 0 0 0 0;
+            padding: 8px 22px;
+            border: none;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.93);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(.4,0,.2,1);
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            display: inline-block;
+        }
+
+        button:hover {
+            background: #fff;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+        }
+
+        button a {
+            text-decoration: none;
+            color: #008b7e;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        button:hover a {
+            color: #00c9a7;
+        }
+
+        button:active {
             transform: translateY(0);
         }
-        main{
-            margin : auto ;
-        }
-        footer{
+
+        footer {
             background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 20px;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0;
+            padding: 32px 0 0 0;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
+            margin-top: 32px;
+            color: #fff;
         }
+
         footer::after {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
         }
-        
-        button {
-            margin: 0;
-            padding: 8px 15px;
-            border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-left : 35%;
+
+        .foot {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto 24px auto;
         }
-        button:hover {
-            background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+        .foot > div {
+            flex: 1 1 220px;
+            min-width: 200px;
         }
-        button a {
+
+        footer h2 {
+            color: #ffeb3b;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        footer ul, footer ol {
+            padding-left: 18px;
+            margin: 0 0 8px 0;
+        }
+
+        footer ul li, footer ol li {
+            list-style: circle;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        footer ul li:hover, footer ol li:hover {
+            list-style: disc;
+            color: #feb47b;
+        }
+
+        footer ul li a, footer ol a {
             text-decoration: none;
-            color: #008b7e;
-            font-size: 0.9rem;
-        }
-        button:hover a {
-            color: #00c9a7;
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            letter-spacing: 1px;
-            font-weight: 700;
             color: #fff;
-            text-align : center;
+            transition: color 0.2s;
         }
-  </style>
+
+        footer ul li a:hover, footer ol a:hover {
+            color: #ffeb3b;
+            text-decoration: underline wavy;
+        }
+
+        .copy {
+            text-align: center;
+            font-weight: bold;
+            padding: 12px 0 8px 0;
+            color: #fff;
+            background: rgba(0,0,0,0.07);
+            border-radius: 0 0 10px 10px;
+            font-size: 1.08rem;
+            letter-spacing: 1px;
+        }
+
+        .copy:hover {
+            color: #ffeb3b;
+        }
+
+        @media (max-width: 900px) {
+            .foot {
+                flex-direction: column;
+                gap: 18px;
+                align-items: flex-start;
+            }
+            .intro {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero {
+                flex-direction: column;
+                gap: 16px;
+            }
+            section {
+                padding: 18px 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar nav {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .foot {
+                gap: 10px;
+            }
+            .ero {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            .ima {
+                width: 60px;
+                height: 60px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="intro">
-        <img src="" alt="">
-        <h1>
-            Congo-santé 
-        </h1>
+            <img src="" alt="logo de notre entreprise" class="ima">
+            <h1>
+                Congo-santé
+            </h1>
         </div>
         <div class="navbar">
             <nav>
                 <button>
-                    <a href="">Accueil</a>
+                    <a href="./index.html">Accueil</a>
                 </button>
                 <button>
-                    <a href="">A propos</a>
+                    <a href="./html/a propos.html">A propos</a>
                 </button>
                 <button>
-                    <a href="">
-                        Article santé 
+                    <a href="./codebase/html/article sante.html">
+                        Article santé
                     </a>
                 </button>
                 <button>
-                    <a href="">
-                        conseils et prévention 
+                    <a href="./codebase/html/conseil et prevention.html">
+                        conseils et prévention
                     </a>
                 </button>
                 <button>
-                    <a href="">
-                        Témoignages 
+                    <a href="./codebase/html/temoignage.html">
+                        Témoignages
                     </a>
                 </button>
                 <button>
-                    <a href="">
-                        vidéo 
+                    <a href="./codebase/html/video.html">
+                        vidéo
                     </a>
                 </button>
                 <button>
-                    <a href="">FAQ</a>
+                    <a href="/codebase/html/faq.html">FAQ</a>
                 </button>
                 <button>
-                    <a href="">
-                        Contact 
+                    <a href="./codebase/html/contact.html">
+                        Contact
                     </a>
                 </button>
             </nav>
         </div>
     </header>
     <main>
+        <section>
         <div class="hero">
-            <img src="/storage/emulated/0/Congo santé /images/copilot_image_1754814139129.jpeg" alt="image interactive">
+            <img src="../Congo/codebase/images/photo1.jpeg" alt="image interactive" class="ero">
             <p>
                 <button>
                     <a href="">
-                        En savoir plus 
+                        En savoir plus
                     </a>
                 </button>
             </p>
         </div>
+        </section>
+        <section>
         <div class="présentation">
-           <h1>
-               Bienvenue sur Congo-santé 
-           </h1> 
-           <p>
-               Un site pour informer, prévenir et éduquer sur la santé au Congo avec des articles, conseils, témoignages et plus encore.
-           </p>
-           <p>
-               <button>
-                   <a href="">
-                       lire un article 
-                   </a>
-               </button>
-           </p>
-           <p>
-               <img src=" /storage/emulated/0/Congo santé /images/copilot_image_1754815279536.jpeg" alt="">
-              
-           </p>
-        </div>
-        <div class="apercu" style="padding: 20px; font-family: Arial, sans-serif;" >
- <h2>Les maladies courantes : ce qu’il faut savoir pour mieux les éviter</h2>
-  <p>Nous tombons tous malades de temps en temps. Mais certaines maladies reviennent souvent et touchent beaucoup de personnes. Ce sont ce qu’on appelle <strong>les maladies courantes</strong>. Connaître ces maladies permet de mieux les prévenir et de mieux réagir quand elles arrivent.</p>
+            <h1>
+                Bienvenue sur Congo-santé
+            </h1>
+            <p>
+                Un site pour informer, prévenir et éduquer sur la santé au Congo avec des articles, conseils,
+                témoignages et plus encore.
+            </p>
+            <p>
+                <button>
+                    <a href="">
+                        lire un article
+                    </a>
+                </button>
+            </p>
+            <p>
+                <img src="./codebase/images/slogan.jpeg" alt="" class="ero">
 
-  <h3>1. Le rhume</h3>
-  <ul>
-    <li>Nez qui coule ou bouché</li>
-    <li>Maux de gorge</li>
-    <li>Éternuements</li>
-    <li>Parfois fièvre légère</li>
-  </ul>
-  <p><strong>Prévention :</strong> se laver les mains souvent, éviter de se toucher le visage, bien se couvrir.</p>
-  <p><em>Bon à savoir :</em> le rhume ne se soigne pas avec des antibiotiques.</p>
-
-  <h3>2. Le paludisme (malaria)</h3>
-  <ul>
-    <li>Fièvre élevée</li>
-    <li>Frissons</li>
-    <li>Douleurs au corps</li>
-    <li>Fatigue intense</li>
-  </ul>
-  <p><strong>Prévention :</strong> moustiquaire, spray anti-moustique, éliminer l’eau stagnante.</p>
-  <p>
-      <button >
-          <a href="">En savoir plus</a>
-      </button>
-  </p>
+            </p>
         </div>
+        </section>
+        
+        <section>
+        <div class="apercu" style="padding: 20px; font-family: Arial, sans-serif;">
+            <h2>Les maladies courantes : ce qu’il faut savoir pour mieux les éviter</h2>
+            <p>Nous tombons tous malades de temps en temps. Mais certaines maladies reviennent souvent et touchent
+                beaucoup de personnes. Ce sont ce qu’on appelle <strong>les maladies courantes</strong>. Connaître ces
+                maladies permet de mieux les prévenir et de mieux réagir quand elles arrivent.</p>
+
+            <h3>1. Le rhume</h3>
+            <ul>
+                <li>Nez qui coule ou bouché</li>
+                <li>Maux de gorge</li>
+                <li>Éternuements</li>
+                <li>Parfois fièvre légère</li>
+            </ul>
+            <p><strong>Prévention :</strong> se laver les mains souvent, éviter de se toucher le visage, bien se
+                couvrir.</p>
+            <p><em>Bon à savoir :</em> le rhume ne se soigne pas avec des antibiotiques.</p>
+
+            <h3>2. Le paludisme (malaria)</h3>
+            <ul>
+                <li>Fièvre élevée</li>
+                <li>Frissons</li>
+                <li>Douleurs au corps</li>
+                <li>Fatigue intense</li>
+            </ul>
+            <p><strong>Prévention :</strong> moustiquaire, spray anti-moustique, éliminer l’eau stagnante.</p>
+            <p>
+                <button>
+                    <a href="">
+                        En savoir plus
+                    </a>
+                </button>
+            </p>
+        </div>
+        </section>
+
+        <section>
         <div class="rubrique">
             <h2>
-                avez-vous des questions ?
+                Avez-vous des questions ?
             </h2>
             <p>
-                Si , vous avez des questions n'
-                hésitez surtout pas à nous contacter ou à nous écrire grâce à notre page <a href=""> faq </a> 
-             .</p>
-             <p>Nous sommes là pour vous et surtout n'oubliez pas <i>"Un dépistage à temps peut sauver une vie."  et " La vaccination protège vous et ceux que vous aimez."   </i>  Congo-santé
+                Si , vous avez des questions n'hésitez surtout pas à nous contacter ou à nous écrire grâce à notre page
+                <a href=""> <strong> FAQ </strong> </a>
+                . <br>
+                Nous sommes là pour vous et surtout n'oubliez pas ; <i> <span>"Un dépistage à temps peut sauver une
+                        vie." et " La vaccination protège vous et ceux que vous aimez."</span> </i> <big> Congo-santé .
+                </big>
             </p>
         </div>
+        </section>
     </main>
     <footer>
+        <div class="foot">
         <div>
-        <h3>
-            lien utile 
-        </h3>
-        <p>
+            <h2>
+                Lien Utile :
+            </h2>
             <nav>
-                <a href="">Accueil</a>
-                <a href="">Article s</a>
-                <a href="">Contact</a>
+                <ul>
+                    <li>
+                        <a href="./index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="./codebase/html/article sante.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="./codebase/html/contact.html">Contact</a>
+                    </li>
+                </ul>
             </nav>
-        </p>
         </div>
         <div>
             <h2>
-                Adresse email/ contact 
+                Adresse email et contact :
             </h2>
-            <p>
-                <a href="mailto:"></a>
-                <a href="tel"></a>
-            </p>
+            <ol>
+                <li>
+                    <a href="mailto:"> Notre adresse email : </a>
+                </li>
+                <li>
+                    <a href="tel:"> Notre numero telephone: </a>
+                </li>
+            </ol>
         </div>
         <div>
             <h2>
@@ -286,19 +537,30 @@
             </h2>
             <ul>
                 <li>
-                    
+                    <a href="">Whatsapp</a>
                 </li>
                 <li>
-                    
+                    <a href="">Facebook</a>
+                </li>
+                <li>
+                    <a href="">Télegrame</a>
+                </li>
+                <li>
+                    <a href=""> Tik-Tok</a>
+                </li>
+                <li>
+                    <a href=""> Instagrame</a>
                 </li>
             </ul>
         </div>
-        <div>
-            &copy; Congo-santé 2025
+    </div>
+        <div class="copy">
+            &copy; Congo-santé 2025 -- RDC
         </div>
     </footer>
 </body>
 <script>
-    
+
 </script>
+
 </html>
