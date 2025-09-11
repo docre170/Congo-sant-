@@ -1,85 +1,169 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #00c9a7, #92fe9d);
+    background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
+    min-height: 100vh;
+    color: #222;
 }
 
 header {
     background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-    color: white;
-    padding: 20px 0;
+    color: #fff;
+    padding: 32px 0 20px 0;
     text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+    border-radius: 0 0 22px 22px;
+    position: relative;
+    margin-bottom: 18px;
 }
-
 header h1 {
-    margin: 0;
+    margin: 0 0 8px 0;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.13);
 }
 
 main {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 32px auto 28px auto;
+    padding: 36px 24px 28px 24px;
+    background: rgba(255,255,255,0.98);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    transition: box-shadow 0.2s;
+}
+main:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+    background: #f7fefd;
+    border-radius: 10px;
+    padding: 18px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #008b7e;
+    letter-spacing: 0.2px;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border: 1.5px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    background: #fafdff;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 1.5px solid #00c9a7;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,201,167,0.08);
 }
 
 button {
-    padding: 10px;
+    padding: 12px 28px;
     background: linear-gradient(to right, #00c9a7, #92fe9d);
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 24px;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    transition: all 0.25s cubic-bezier(.4,0,.2,1);
+    letter-spacing: 0.5px;
 }
-
 button:hover {
-    background-color: #2c3e50;
-    color: black;
+    background: #fff;
+    color: #00c9a7;
+    border: 1.5px solid #00c9a7;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
 }
 
 footer {
     background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 22px 0 12px 0;
     position: relative;
-    bottom: 0;
     width: 100%;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    margin-top: 38px;
+    border-radius: 16px 16px 0 0;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+footer ul li {
+    margin: 0 10px;
 }
 
 a {
-    color: black;
+    color: #008b7e;
     text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
 }
-
 a:hover {
-    color: #2a5298;
+    color: #00c9a7;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
-footer ul li {
-    list-style: none;
+
+@media (max-width: 900px) {
+    main {
+        max-width: 98vw;
+        padding: 18px 2vw 18px 2vw;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
-header ul li {
-    list-style: none;
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.1rem;
+    }
+    main {
+        padding: 10px 2vw 10px 2vw;
+    }
+    button {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+    footer {
+        font-size: 0.95rem;
+        padding: 12px 0 6px 0;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 7px;
+    }
+    form {
+        padding: 10px 4px;
+    }
 }

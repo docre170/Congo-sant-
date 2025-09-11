@@ -1,52 +1,291 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <head>
     <meta charset="UTF-8">
     <title>Articles Santé – Congo Santé</title>
     <link rel="stylesheet" href="../css/article sante.css">
+    <style>
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .article {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 18px 20px 14px 20px;
+            margin-bottom: 0;
+            transition: box-shadow 0.2s;
+        }
+        .article:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+        .article h3 {
+            margin-top: 0;
+            color: #008b7e;
+        }
+        .article a {
+            color: #00c9a7;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .article a:hover {
+            color: #008b7e;
+        }
+        .search-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 18px;
+        }
+        @media (max-width: 700px) {
+            .search-filter-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .article {
+                padding: 12px 8px 10px 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header>
+        <img src="../images/congo logo.jpg" alt="logo">
         <h1>Congo Santé</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-                <li><a href="articles.html">Articles Santé</a></li>
-                <li><a href="conseils.html">Conseils</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="C:\Congo\Congo\index.html">Accueil</a></li>
+                <li><a href="./a-propos.html">À propos</a></li>
+                <li><a href="./articles.html">Articles Santé</a></li>
+                <li><a href="./conseils.html">Conseils</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Articles Santé</h2>
-
-        <article class="article">
-            <h3>Les maladies courantes chez les jeunes</h3>
-            <p>Rhume, grippe, paludisme, et infections digestives font partie des maladies les plus fréquentes. Apprenez
-                à les reconnaître et à les prévenir facilement.</p>
-            <a href="article-maladies.html">Lire l’article</a>
-        </article>
-
-        <article class="article">
-            <h3>Introduction à la santé mentale</h3>
-            <p>Comprendre ce qu’est la santé mentale, pourquoi elle est importante, et comment repérer les signes d’un
-                mal-être psychologique.</p>
-            <a href="#">Lire l’article</a>
-        </article>
-        <article class="article">
-            <h3>Bien manger avec un petit budget</h3>
-            <p>Des astuces simples pour équilibrer son alimentation sans dépenser trop, tout en restant en bonne santé.</p>
-            <a href="#">Lire l’article</a>
-        </article>
+        <h1>Articles Santé</h1>
+        <h2>Des conseils, analyses et actualités pour mieux comprendre votre santé.</h2>
+        <div class="search-filter-container" data-aos="fade-up">
+            <input type="text" id="searchInput" placeholder="Rechercher un article..." />
+            <select id="categoryFilter">
+                <option value="">Toutes les catégories</option>
+                <option value="prevention">Prévention</option>
+                <option value="nutrition">Nutrition</option>
+                <option value="epidemies">Épidémies</option>
+                <option value="sante-mentale">Santé mentale</option>
+            </select>
+            <select id="dateFilter">
+                <option value="">Toutes les dates</option>
+                <option value="recent">Les plus récents</option>
+                <option value="old">Les plus anciens</option>
+            </select>
+        </div>
+        <div id="articlesContainer" class="article-list"></div>
         </main>
         
         <footer>
-            <p>&copy; 2025 Congo Santé. Tous droits réservés.</p>
-        </footer>
+            <p>&copy; 2025 Congo Santé. Tous droits réservés.</p>        <div class="dedicace">
+            <p>Congo-santé - Eduquer,sensibilisé et accompagner</p>
+        </div>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./A propos.html"> A propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
+            <li><a href="mailto:kabilamerdi95@gmail.com">Contactez-nous</a></li>
+            <li><a href="tel: +243847696293 ">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook/" target="_blank" title="facebook" class="reseau-link">
+                        <i class="fab fa-facebook"></i> Github
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>© Copyright Congo-santé 2025. Tous droits réservés. </p>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+
+        <script>
+        // Articles de démonstration (à remplacer par des données dynamiques si besoin)
+        const articles = [
+            {
+                title: "Variole simienne (Mpox) en RDC : Ce que vous devez savoir",
+                content: "Depuis septembre 2023, la République Démocratique du Congo (RDC) a signalé plus de 15 000 cas suspects de variole simienne (Mpox). Cette maladie, endémique dans certaines régions, se transmet principalement par contact avec des animaux infectés ou entre humains. Découvrez les symptômes, les modes de transmission, et les mesures de prévention, y compris la vaccination et l'isolement des cas.",
+                link: "article-mpox.html",
+                date: "2025-10-10",
+                category: "epidemies"
+            },
+            {
+                title: "Fievre typhoide",
+                content: "La fièvre typhoïde est une infection bactérienne causée par Salmonella typhi, transmise par l'eau ou les aliments contaminés. En RDC, elle reste un problème de santé publique, en particulier dans les zones où l'accès à l'eau potable et à l'assainissement est limité. Les symptômes incluent une fièvre prolongée, des maux de tête, des douleurs abdominales et une éruption cutanée. La prévention repose sur l'amélioration des conditions sanitaires, la consommation d'eau potable, et la vaccination.",
+                link: "article-fievre-typhoide.html",
+                category: "Nutrition",
+                date : "2025-10-08"
+            },
+            {
+                title: "La COVID-19 en RDC : État des lieux et mesures de prévention",
+                content: "Depuis le début de la pandémie, la République Démocratique du Congo (RDC) a mis en place plusieurs mesures pour contenir la propagation du virus. Découvrez les dernières statistiques, les symptômes à surveiller, et les gestes barrières essentiels pour se protéger.",
+                link: "article-covid.html",
+                category: "prevention",
+                date: "2025-10-05"
+            },
+            {
+                title: "Ebola en RDC : Comprendre et Prévenir",
+                content: "L'Ebola est une maladie virale grave qui a causé plusieurs épidémies en République Démocratique du Congo (RDC). Apprenez-en plus sur les symptômes, la transmission, et les mesures de prévention pour protéger votre communauté.",
+                link: "article-ebola.html",
+                category: "epidemies",
+                date: "2025-10-01"
+            },
+            {
+                title: "konzo en RDC : Symptômes, Causes et Prévention",
+                content: "Le konzo est une maladie neurologique paralytique liée à la consommation de manioc mal préparé contenant du cyanure. Découvrez les symptômes, les causes, et les stratégies de prévention pour éviter cette maladie dans les communautés rurales.",
+                link: "article-konzo.html",
+                category : "Nutrition"
+            },
+            {
+                title: "La tuberculose en RDC : Symptômes, Traitement et Prévention",
+                content: "La tuberculose (TB) reste un défi majeur de santé publique en République Démocratique du Congo (RDC). Découvrez les symptômes, les options de traitement, et les mesures de prévention pour lutter contre cette maladie.",
+                link: "article-tuberculose.html",
+                category: "prevention",
+                date: "2025-09-25"
+            },
+            {
+                title: " infections sexuellement transmissibles (IST)",
+                content: "La RDC fait face à une prévalence notable des IST, avec des efforts en cours pour améliorer la prévention et le traitement. La prévention inclut l'éducation, le dépistage régulier et l'utilisation de préservatifs.",
+                link: "article-ist.html",
+                date: "2025-09-20"
+            },
+            {
+                title: "Peste",
+                content: "La peste est une maladie infectieuse grave causée par la bactérie Yersinia pestis. En RDC, des foyers ont été identifiés, notamment dans la province de l'Ituri. La transmission se fait principalement par les piqûres de puces de rongeurs infectés. La prévention inclut le contrôle des populations de rongeurs, une bonne hygiène et une surveillance épidémiologique.",
+                link: "article-peste.html",
+                category: "epidemies",
+                date: "2025-09-15"
+            },
+            {
+                title: "Comprendre le paludisme en RDC",
+                content: "Le paludisme reste un défi majeur en RDC. Découvrez les symptômes, les modes de transmission, et les mesures de prévention efficaces.",
+                link: "article-paludisme.html",
+                category: "prevention",
+                date: "2025-09-10"
+            },
+            {
+                title: "VIH/SIDA : Lutte et Prévention en RDC",
+                content: "La RDC intensifie ses efforts contre le VIH/SIDA avec des initiatives communautaires. Apprenez-en plus sur les stratégies de prévention et les traitements disponibles.",
+                link: "article-vih.html",
+                category:"epidemies",
+                date: "2025-09-05"
+            },
+            {
+                title: "cholera en RDC : Prévention et Gestion",
+                content: "Le choléra demeure un problème de santé publique en RDC. Découvrez les mesures de prévention et comment gérer une épidémie.",
+                link: "article-cholera.html",
+                category: "prevention",
+                date: "2025-08-25"
+            },
+            {
+                title: "Les maladies courantes chez les jeunes",
+                content: "Rhume, grippe, paludisme, et infections digestives font partie des maladies les plus fréquentes. Apprenez à les reconnaître et à les prévenir facilement.",
+                link: "article-maladies.html",
+                category: "prevention",
+                date: "2025-08-01"
+            },
+            {
+                title: "Les maladies courantes chez les jeunes",
+                content: "Rhume, grippe, paludisme, et infections digestives font partie des maladies les plus fréquentes. Apprenez à les reconnaître et à les prévenir facilement.",
+                link: "article-maladies.html",
+                category: "prevention",
+                date: "2025-08-01"
+            },
+            {
+                title: "Introduction à la santé mentale",
+                content: "Comprendre ce qu’est la santé mentale, pourquoi elle est importante, et comment repérer les signes d’un mal-être psychologique.",
+                link: "#",
+                category: "sante-mentale",
+                date: "2025-07-15"
+            },
+            {
+                title: "Bien manger avec un petit budget",
+                content: "Des astuces simples pour équilibrer son alimentation sans dépenser trop, tout en restant en bonne santé.",
+                link: "#",
+                category: "nutrition",
+                date: "2025-06-20"
+            },
+            {
+                title: "Prévenir les épidémies saisonnières",
+                content: "Les gestes simples pour limiter la propagation des virus et protéger sa famille.",
+                link: "#",
+                category: "epidemies",
+                date: "2025-05-10"
+            }
+        ];
+
+        const searchInput = document.getElementById("searchInput");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const dateFilter = document.getElementById("dateFilter");
+        const articlesContainer = document.getElementById("articlesContainer");
+
+        function renderArticles(list) {
+            articlesContainer.innerHTML = '';
+            if (list.length === 0) {
+                articlesContainer.innerHTML = '<p>Aucun article trouvé.</p>';
+                return;
+            }
+            list.forEach(article => {
+                const el = document.createElement('article');
+                el.className = 'article';
+                el.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p><a href="${article.link}">Lire l’article</a>`;
+                articlesContainer.appendChild(el);
+            });
+        }
+
+        function filterArticles() {
+            const searchText = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const date = dateFilter.value;
+            let filtered = articles.filter(a => {
+                const matchText = a.title.toLowerCase().includes(searchText) || a.content.toLowerCase().includes(searchText);
+                const matchCat = !category || a.category === category;
+                return matchText && matchCat;
+            });
+            if (date === 'recent') {
+                filtered = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+            } else if (date === 'old') {
+                filtered = filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+            }
+            renderArticles(filtered);
+        }
+
+        searchInput.addEventListener("input", filterArticles);
+        categoryFilter.addEventListener("change", filterArticles);
+        dateFilter.addEventListener("change", filterArticles);
+
+        // Initial rendering
+        renderArticles(articles);
+        </script>
         </body>
         
         </html>

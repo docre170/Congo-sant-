@@ -24,7 +24,16 @@ header::before {
     height: 4px;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
+.search-filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
+input, select {
+  padding: 8px;
+  font-size: 14px;
+}
 .intro {
     text-align: center;
     padding: 20px 0;
