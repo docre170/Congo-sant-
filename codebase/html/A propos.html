@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
-        background: linear-gradient(to right, #2193b0, #ffffff);
+            background: linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
         }
-    header {
+        header {
             background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 20px;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            padding: 0 0 18px 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
             position: relative;
             overflow: hidden;
+            border-radius: 0 0 18px 18px;
         }
         header::before {
             content: "";
@@ -32,9 +34,18 @@
         }
         .intro {
             text-align: center;
-            padding: 20px 0;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            padding: 28px 0 10px 0;
+            color: #fff;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13);
+        }
+        .intro img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
         }
         header h1 {
             font-size: 2.5rem;
@@ -43,42 +54,53 @@
             font-weight: 700;
             color: #fff;
         }
+        h2{
+            color: #00c9a7;
+            font-size: 1.8rem;
+            margin: 20px 0 10px 0;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-align: center;
+        }
         .navbar {
             display: flex;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px;
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
-            margin: 0 auto;
-            max-width: 90%;
+            background: rgba(255, 255, 255, 0.13);
+            padding: 10px 0;
+            backdrop-filter: blur(6px);
+            border-radius: 10px;
+            margin: 0 auto 10px auto;
+            max-width: 92%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .navbar nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
         }
         .navbar button {
             margin: 0;
-            padding: 8px 15px;
+            padding: 8px 22px;
             border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.92);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s cubic-bezier(.4,0,.2,1);
             font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
         .navbar button:hover {
             background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
         }
         .navbar button a {
             text-decoration: none;
             color: #008b7e;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         .navbar button:hover a {
             color: #00c9a7;
@@ -86,16 +108,24 @@
         .navbar button:active {
             transform: translateY(0);
         }
-        main{
-            margin : auto ;
+        main {
+            margin: 0 auto;
+            max-width: 800px;
+            background: rgba(255,255,255,0.93);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 32px 18px 24px 18px;
         }
-        footer{
+        footer {
             background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 20px;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            margin: 30px 0 0 0;
+            padding: 25px 0 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
+            font-size: 1rem;
+            text-align: center;
         }
         footer::after {
             content: "";
@@ -106,28 +136,88 @@
             height: 4px;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
         }
+        footer nav ul,
+        footer > ul,
+        footer .reseau ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        footer nav ul li,
+        footer > ul li,
+        footer .reseau ul li {
+            margin: 0 8px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #2c7be5;
+            text-decoration: underline;
+        }
+        footer .dedicace {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        footer .reseau {
+            margin: 10px 0 0 0;
+        }
+        footer .reseau-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 1.05rem;
+        }
+        footer i.fab {
+            font-size: 1.2em;
+            margin-right: 4px;
+        }
+        @media (max-width: 600px) {
+            footer {
+                font-size: 0.95rem;
+                padding: 18px 0 6px 0;
+            }
+            footer nav ul,
+            footer > ul,
+            footer .reseau ul {
+                flex-direction: column;
+                gap: 7px;
+            }
+            footer .dedicace {
+                font-size: 1rem;
+            }
+        }
         
         button {
             margin: 0;
-            padding: 8px 15px;
+            padding: 8px 18px;
             border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.92);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s cubic-bezier(.4,0,.2,1);
             font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-left : 35%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
         button:hover {
             background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            color: #00c9a7;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
         }
         button a {
             text-decoration: none;
             color: #008b7e;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         button:hover a {
             color: #00c9a7;
@@ -136,25 +226,52 @@
             transform: translateY(0);
         }
         h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
+            font-size: 2.2rem;
+            margin: 10px 0 18px 0;
             letter-spacing: 1px;
             font-weight: 700;
-            color: dark;
-            text-align : center;
+            color: #008b7e;
+            text-align: center;
         }
-        span{
-            color: #fff;
+        span {
+            color: #00c9a7;
+            font-weight: bold;
         }
-        p{
+        p {
             text-indent: 12px;
+            font-size: 1.08rem;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                max-width: 98vw;
+                padding: 18px 2vw 18px 2vw;
+            }
+            .intro img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar nav {
+                flex-direction: column;
+                gap: 4px;
+            }
+            main {
+                padding: 10px 2vw 10px 2vw;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
         }
   </style>
 </head>
 <body>
     <header>
        <div class="intro">
-        <img src="" alt="">
+        <img src="../images/congo logo.jpg" alt="Logo">
         <h1>
             Congo-santé 
         </h1>
@@ -162,33 +279,33 @@
         <div class="navbar">
             <nav>
                 <button>
-                    <a href="">Accueil</a>
+                    <a href="C:\Congo\Congo\index.html">Accueil</a>
                 </button>
                 <button>
-                    <a href="">
+                    <a href="./article sante.html">
                         Article santé 
                     </a>
                 </button>
                 <button>
-                    <a href="">
+                    <a href="./conseil et prevention.html">
                         conseils et prévention 
                     </a>
                 </button>
                 <button>
-                    <a href="">
+                    <a href="../html/temoignage.html">
                         Témoignages 
                     </a>
                 </button>
                 <button>
-                    <a href="">
+                    <a href="./video.html">
                         vidéo 
                     </a>
                 </button>
                 <button>
-                    <a href="">FAQ</a>
+                    <a href="./faq.html">FAQ</a>
                 </button>
                 <button>
-                    <a href="">
+                    <a href="./faq.html">
                         Contact 
                     </a>
                 </button>
@@ -204,6 +321,39 @@
                 <span>Congo Santé </span> est une initiative éducative et citoyenne visant à informer, sensibiliser et accompagner les jeunes et les adultes congolais autour des questions de santé physique, mentale et communautaire.
             </p>
         </div>
+        <div>
+            <p>
+                Congo Santé est une initiative numérique dédiée à l'amélioration de l’accès à l'information sanitaire en République Démocratique du Congo. Notre mission est de sensibiliser, informer et accompagner les populations sur les enjeux de santé publique à travers une plateforme simple, accessible et locale.
+            </p>
+        </div>
+        <div>
+            <h2>
+                Notre vision
+            </h2>
+            <p>
+                Un Congo où chaque citoyen a accès à une information sanitaire fiable, actualisée et compréhensible, pour mieux prévenir les maladies et promouvoir le bien-être.
+
+            </p>
+        </div>
+        <div>
+            <h2>
+                Nos objectifs
+            </h2>
+            <ul>
+                <li>Informer : Fournir des articles, vidéos et ressources éducatives sur les principales problématiques de santé en RDC.</li>
+                <li>Sensibiliser : Mettre en lumière les comportements à risque et les bonnes pratiques pour une vie saine.</li>
+                <li>Accompagner : Offrir des conseils pratiques et des outils pour aider les individus à prendre soin de leur santé au quotidien.</li>
+                <li>Engager : Créer une communauté active autour des questions de santé, favorisant le partage d'expériences et le soutien mutuel.</li>
+            </ul>
+        </div>
+        <dialog>
+            <p>
+                Nous croyons fermement que l'accès à une information sanitaire de qualité est un droit fondamental pour tous. En travaillant ensemble, nous pouvons contribuer à bâtir un avenir plus sain pour le Congo.
+            </p>
+            <p>
+                Rejoignez-nous dans cette aventure pour faire de la santé une priorité nationale !
+            </p>
+        </dialog>
     </main>
     <footer>
         <div class="dedicace">
@@ -218,8 +368,8 @@
         </nav>
         <ul>
             <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
-            <li><a href="mailto:">Contactez-nous</a></li>
-            <li><a href="tel:+243">Appel</a></li>
+            <li><a href="mailto:kabilamerdi95@gmail.com">Contactez-nous</a></li>
+            <li><a href="tel: +243847696293 ">Appel</a></li>
         </ul>
         <div class="reseau">
             <ul>
