@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> index</title>
+    <title> index </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         body {
             background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
@@ -12,7 +16,9 @@
             color: #222;
             min-height: 100vh;
         }
-
+        .con{
+            text-align: center;
+        }
         header {
             background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
             margin-bottom: 24px;
@@ -316,6 +322,62 @@
         .copy:hover {
             color: #ffeb3b;
         }
+        #hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 10px;
+    background: none;
+    border: none;
+    color: white;
+}
+#hamburger.active {
+    color: #4f8cff;
+}
+#hamburger:hover {
+    color: #2d6cdf;
+}
+#photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.reseau ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style: none;
+}
+
+.reseau-link {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+     display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.reseau-link:hover {
+    color: #4f8cff;
+}
+
+.reseau i {
+    font-size: 1.5rem;
+}
+.bouton{
+    display: inline-block;
+    background: #4f8cff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: color 0.2s, color 0.2s;
+}
 
         @media (max-width: 900px) {
             .foot {
@@ -363,10 +425,14 @@
     </style>
 </head>
 
-<body>
-    <header>
+<!-- onload="f()" sert à appeler la fonction -->
+<body onload="f()">
+  <header>
+    <form action="" name="fo">
+      <input type="text" name="horloge" size="8" style="font-family: 'Courier New', Courier, monospace;">
+    </form>
         <div class="intro">
-            <img src="" alt="logo de notre entreprise" class="ima">
+            <img src="./codebase/images/congo logo.jpg" alt="logo de notre entreprise" class="ima">
             <h1>
                 Congo-santé
             </h1>
@@ -377,7 +443,7 @@
                     <a href="./index.html">Accueil</a>
                 </button>
                 <button>
-                    <a href="./html/a propos.html">A propos</a>
+                    <a href="./codebase/html/A propos.html">A propos</a>
                 </button>
                 <button>
                     <a href="./codebase/html/article sante.html">
@@ -400,7 +466,7 @@
                     </a>
                 </button>
                 <button>
-                    <a href="/codebase/html/faq.html">FAQ</a>
+                    <a href="./codebase/html/faq.html">FAQ</a>
                 </button>
                 <button>
                     <a href="./codebase/html/contact.html">
@@ -409,9 +475,29 @@
                 </button>
             </nav>
         </div>
+        <button id="hamburger"><i class="fas fa-bars"></i></button>
+    <nav>
+      <div class="center">
+        <a href="./index.html"><button>Accueil</button></a>
+        <a href="./html/a propos .html"><button>A propos de nous</button></a>
+        <a href="./html/connexion.html"><button>Se connecter</button></a>
+        <a href="./html/inscription2.html"><button>S'inscrire</button></a>
+        <a href="./html/contact.html"><button>Contact</button></a>
+        <a href="./html/cours.html"><button>Cours</button></a>
+        <a href="https://github.com/docre170/portfolio.git"><button>Voir portfolio</button></a>
+      </div>
+    </nav>
     </header>
     <main>
         <section>
+            <div>
+                <h1 class="con"> Bienvenue sur Congo-Santé</h1>
+            </div>
+            <div>
+                <button>
+                    <a href="./codebase/html/service.html">Découvrir nos services</a>
+                </button>
+            </div>
         <div class="hero">
             <img src="../Congo/codebase/images/photo1.jpeg" alt="image interactive" class="ero">
             <p>
@@ -560,7 +646,49 @@
     </footer>
 </body>
 <script>
+    // Affiche/masque le menu sur mobile
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('nav .center').classList.toggle('active');
+  });
 
+  // Optionnel : referme le menu quand on clique sur un lien
+  document.querySelectorAll('nav .center a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('nav .center').classList.remove('active');
+    });
+  });
+  function f(){
+    // gestion de Date
+    d=new Date();
+    // pour afficher
+    console.log("c'est l 'annee " + d.getFullYear());
+    // pour le mois 
+    console.log(d.getMonth());
+    setTimeout("f()", 1000);
+    e=new Date();
+    h=e.getHours();
+    m=d.getMinutes();
+    s=d.getSeconds();
+    if(s%2==0)
+      sep=":";
+    else
+       sep="-";
+    if (h<10)  h="0"+h;
+    if (m<10)  m="0"+m;
+    if (s<10)  s="0"+s;
+        // pour clignoter 
+    document.fo.horloge.value=h+sep+m+sep+s;
+  }
+// si on survol l'image
+function i(){
+  function over(){
+    // changer la source
+    document.images[1].src="../photo/logo2.jpg";
+  }
+  function out(){
+    document.images[0].src="../photo/codeur.jpg"
+  }
+}
 </script>
 
 </html>

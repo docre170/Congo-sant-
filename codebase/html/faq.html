@@ -34,7 +34,7 @@
             </div>
             </div>
             
-            <script src="../JavaScript/faq.js"></script>
+            <!-- <script src="../JavaScript/faq.js"></script> -->
                 <footer>
                     <div class="dedicace">
                         <p>Congo-santé - Eduquer,sensibilisé et accompagner</p>
@@ -69,6 +69,15 @@
                 </footer>
                 <script>
                     AOS.init();
+                </script>
+                <script>
+                    const questions = document.querySelectorAll('.question');
+questions.forEach(q => {
+    q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+    });
+});
                 </script>
             </body>
             
