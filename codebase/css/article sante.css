@@ -25,10 +25,13 @@ header::before {
     height: 4px;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
+/* Modern search/filter bar */
 .search-filter-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        margin-top: 18px;
 }
 .logo {
     display: flex;
@@ -49,8 +52,59 @@ nav ul a:hover {
     text-decoration: underline;
 }
 input, select {
-  padding: 8px;
-  font-size: 14px;
+        padding: 10px 12px;
+        font-size: 1rem;
+        border-radius: 7px;
+        border: 1.5px solid #b2dfdb;
+        background: #fafdff;
+        transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+        border: 1.5px solid #00c9a7;
+        outline: none;
+        box-shadow: 0 2px 8px rgba(0,201,167,0.08);
+}
+@media (max-width: 900px) {
+    main {
+        max-width: 98vw;
+        padding: 18px 2vw 18px 2vw;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 700px) {
+    .search-filter-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .article {
+        padding: 12px 8px 10px 8px;
+    }
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.1rem;
+    }
+    main {
+        padding: 10px 2vw 10px 2vw;
+    }
+    button {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+    footer {
+        font-size: 0.95rem;
+        padding: 12px 0 6px 0;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 7px;
+    }
 }
 .intro {
     text-align: center;
