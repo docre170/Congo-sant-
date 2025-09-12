@@ -1,3 +1,45 @@
+/* Barre de recherche et filtres */
+.search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    background: #fafdff;
+    border-radius: 10px;
+    padding: 18px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    align-items: center;
+    justify-content: flex-start;
+}
+.search-filter-container input,
+.search-filter-container select {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 7px;
+    border: 1.5px solid #b2dfdb;
+    background: #fff;
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-right: 8px;
+}
+.search-filter-container input:focus,
+.search-filter-container select:focus {
+    border: 1.5px solid #00c9a7;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,201,167,0.08);
+}
+@media (max-width: 700px) {
+    .search-filter-container {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 4px;
+    }
+    .search-filter-container input,
+    .search-filter-container select {
+        width: 100%;
+        margin-right: 0;
+    }
+}
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.7;
@@ -26,7 +68,17 @@ header h1 {
     font-weight: 700;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.13);
 }
-
+.logo img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20%;
+}
+ul li{
+    list-style: none;
+}
+ul li a {
+    color: yellow;
+}
 main {
     max-width: 800px;
     margin: 32px auto 28px auto;

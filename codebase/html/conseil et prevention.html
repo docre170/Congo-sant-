@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <title>Conseils & Prévention – Congo Santé</title>
     <link rel="stylesheet" href="../css/conseil et prevention.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .article {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 18px 20px 14px 20px;
+            margin-bottom: 0;
+            transition: box-shadow 0.2s;
+        }
+        .article:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+        .article h3 {
+            margin-top: 0;
+            color: #008b7e;
+        }
+        .article a {
+            color: #00c9a7;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .article a:hover {
+            color: #008b7e;
+        }
+        .search-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 18px;
+        }
+        @media (max-width: 700px) {
+            .search-filter-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .article {
+                padding: 12px 8px 10px 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,11 +100,167 @@
                 <p>Mangez varié, limitez les produits très sucrés ou gras, et buvez beaucoup d’eau. Des repas simples peuvent être
                     très nutritifs.</p>
             </section>
+            <section>
+                 <div class="search-filter-container" data-aos="fade-up">
+            <input type="text" id="searchInput" placeholder="Rechercher un article..." />
+            <select id="categoryFilter">
+                <option value="">Toutes les catégories</option>
+                <option value="prevention">Prévention</option>
+                <option value="nutrition">Nutrition</option>
+                <option value="epidemies">Épidémies</option>
+                <option value="sante-mentale">Santé mentale</option>
+            </select>
+            <select id="dateFilter">
+                <option value="">Toutes les dates</option>
+                <option value="recent">Les plus récents</option>
+                <option value="old">Les plus anciens</option>
+            </select>
+        </div>
+        <div id="articlesContainer" class="article-list"></div>
+            </section>
             </main>
             
             <footer>
                 <p>&copy; 2025 Congo Santé. Tous droits réservés.</p>
+                      <div class="dedicace">
+            <p>Congo-santé - Eduquer,sensibilisé et accompagner</p>
+        </div>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./A propos.html"> A propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
+            <li><a href="mailto:kabilamerdi95@gmail.com">Contactez-nous</a></li>
+            <li><a href="tel: +243847696293 ">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243847696293" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook/" target="_blank" title="facebook" class="reseau-link">
+                        <i class="fab fa-facebook"></i> Github
+                    </a>
+                </li>
+            </ul>
+        </div>
             </footer>
-            </body>
-            
-            </html>
+        <script>
+        // Articles de démonstration (à remplacer par des données dynamiques si besoin)
+        const articles = [
+            {
+                title: "Variole simienne (Mpox) en RDC : Ce que vous devez savoir",
+                content: "La Mpox (anciennement appelée variole simienne) est une maladie virale causée par un orthopoxvirus. Elle se transmet principalement par contact étroit avec une personne infectée, ses lésions cutanées, ses fluides corporels ou des objets contaminés (vêtements, literie, etc.)",
+                link: "article-mpox.html",
+                symptoms: ["fièvre", "maux de tête", "douleurs musculaires", "fatigue", "éruption cutanée"],
+                prevention: ["éviter le contact étroit avec les personnes infectées", "se laver régulièrement les mains", "utiliser des équipements de protection individuelle"],
+                date: "2025-10-10",
+                category: "epidemies"
+            },
+            {
+                title: "Fievre typhoide",
+                content: "La fièvre typhoïde est une infection bactérienne grave causée par Salmonella Typhi. Elle se transmet principalement par la consommation d’eau ou d’aliments contaminés par des matières fécales humaines",
+                link: "article-fievre-typhoide.html",
+                symptoms: ["fièvre élevée", "maux de tête", "douleurs abdominales", "constipation ou diarrhée", "éruption cutanée"],
+                category: "Nutrition",
+                prevention: "Hygiène alimentaire rigoureuse, consommation d'eau potable, vaccination",
+                date : "2025-10-08"
+            },
+            {
+                title: "La COVID-19 en RDC : État des lieux et mesures de prévention",
+                content: "La COVID-19 est une maladie infectieuse causée par le virus SARS-CoV-2, qui se transmet principalement par les gouttelettes respiratoires (toux, éternuements, parole) et les aérosols en suspension dans l’air⁽¹⁾. Elle peut provoquer des symptômes allant de légers à graves, et parfois des formes prolongées appelées “COVID long”.",
+                link: "article-covid.html",
+                symptoms: ["fièvre", "toux", "fatigue", "perte de goût ou d'odorat", "difficultés respiratoires"],
+                prevention: ["port du masque", "distanciation physique", "hygiène des mains", "vaccination"],
+                category: "prevention",
+                date: "2025-10-05"
+            },
+            {
+                title: "Ebola en RDC : Comprendre et Prévenir",
+                content: "Ebola est une maladie virale grave, souvent mortelle, causée par un virus de la famille des Filoviridae. Elle se transmet par contact direct avec les fluides corporels (sang, salive, urine, vomissures, sperme) d’une personne infectée ou décédée, ou par manipulation d’animaux infectés (comme les singes ou les chauves-souris frugivores)",
+                link: "article-ebola.html",
+                symptoms: "Fièvre soudaine et élevéee, fatigue intense, douleurs musculaires, maux de tête, mal de gorge, vomissements, diarrhée, éruption cutanée, insuffisance rénale ou hépatique",
+                prevention: ["éviter le contact avec les personnes infectées", "utiliser des équipements de protection individuelle", "respecter les mesures d'hygiène"],
+                category: "epidemies",
+                date: "2025-10-01"
+            },
+            {
+                title: "konzo en RDC : Symptômes, Causes et Prévention",
+                content: "Le Konzo est une maladie neurologique irréversible causée par une intoxication chronique au cyanure, principalement liée à la consommation de manioc amer mal préparé. Elle provoque une paralysie soudaine des jambes (paraparésie spastique) et touche surtout les enfants et les femmes dans les zones rurales pauvres",
+                symptoms: ["paralysie des jambes", "difficulté à marcher", "spasticité musculaire"],
+                prevention: ["préparer correctement le manioc", "diversifier l'alimentation", "éduquer les communautés sur les risques"],
+                link: "article-konzo.html",
+                category : "Nutrition"
+            },
+            {
+                title: "La tuberculose en RDC : Symptômes, Traitement et Prévention",
+                content: "La tuberculose est causée par la bactérie Mycobacterium tuberculosis. Elle touche principalement les poumons, mais peut aussi affecter d’autres organes (reins, os, cerveau). Elle se transmet par voie aérienne, via les gouttelettes expulsées quand une personne infectée tousse, éternue ou parle",
+                link: "article-tuberculose.html",
+                symptoms: ["toux persistante", "fièvre", "sueurs nocturnes", "perte de poids", "fatigue"],
+                prevention: ["vaccination BCG", "traitement complet des cas actifs", "amélioration des conditions de vie"],
+                category: "prevention",
+                date: "2025-09-25"
+            },
+            {
+                title: " infections sexuellement transmissibles (IST)",
+                content: "Les IST (infections sexuellement transmissibles) sont des maladies qui se transmettent principalement lors de rapports sexuels (vaginaux, oraux ou anaux), avec ou sans pénétration. Elles peuvent être causées par des bactéries, des virus ou des parasites.",
+                date: "2025-09-20",
+                symptoms: " Chlamydia , Gonorrhée BactérieBrûlures urinaires",
+                prevention: ["utilisation de préservatifs", "dépistage régulier", "communication avec les partenaires"],
+                link: "article-ist.html",
+                category: "sante-mentale"
+            }
+        ];
+
+        const searchInput = document.getElementById("searchInput");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const dateFilter = document.getElementById("dateFilter");
+        const articlesContainer = document.getElementById("articlesContainer");
+
+        function renderArticles(list) {
+            articlesContainer.innerHTML = '';
+            if (list.length === 0) {
+                articlesContainer.innerHTML = '<p>Aucun article trouvé.</p>';
+                return;
+            }
+            list.forEach(article => {
+                const el = document.createElement('article');
+                el.className = 'article';
+                el.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p><a href="${article.link}">Lire l’article</a>`;
+                articlesContainer.appendChild(el);
+            });
+        }
+
+        function filterArticles() {
+            const searchText = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const date = dateFilter.value;
+            let filtered = articles.filter(a => {
+                const matchText = a.title.toLowerCase().includes(searchText) || a.content.toLowerCase().includes(searchText);
+                const matchCat = !category || a.category === category;
+                return matchText && matchCat;
+            });
+            if (date === 'recent') {
+                filtered = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+            } else if (date === 'old') {
+                filtered = filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+            }
+            renderArticles(filtered);
+        }
+
+        searchInput.addEventListener("input", filterArticles);
+        categoryFilter.addEventListener("change", filterArticles);
+        dateFilter.addEventListener("change", filterArticles);
+
+        // Initial rendering
+        renderArticles(articles);
+        </script>
+    </body>
+</html>
