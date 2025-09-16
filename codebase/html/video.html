@@ -3,6 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéos – Congo Santé</title>
+    <link rel="stylesheet" href="../css/video.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
+            color: #222;
+        }
+        header {
+            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 32px 0 20px 0;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+        .logo img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        main {
+            max-width: 800px;
+            margin: 32px auto 28px auto;
+            padding: 36px 24px 28px 24px;
+            background: rgba(255,255,255,0.98);
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+        }
+        h2 {
+            text-align: center;
+            color: #008b7e;
+            margin-bottom: 24px;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+        .video-box {
+            width: 100%;
+            max-width: 560px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 18px;
+            margin-bottom: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 8px;
+            border: none;
+        }
+        .desc {
+            margin-top: 12px;
+            color: #222;
+            font-size: 1.05rem;
+        }
+        .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-box {
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.video-box p {
+  margin-top: 8px;
+}
+footer{
+        background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+}
+        @media (max-width: 700px) {
+            main {
+                padding: 10px 2vw 10px 2vw;
+            }
+            .video-box {
+                padding: 10px 4px;
+            }
+            iframe {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/congo logo.jpg" alt="Logo Congo Santé">
+            <h1>Congo Santé</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="./A propos.html">À propos</a></li>
+                <li><a href="./article sante.html">Articles Santé</a></li>
+                <li><a href="./conseil et prevention.html">Conseils</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Nos vidéos santé</h2>
+        <div class="video-container">
+            <div class="video-box">
+                <iframe src="https://youtube.com/shorts/vHFqrOFae8Y?si=pgUR_2JkcfajA8Sg" title="Conseils santé Congo" allowfullscreen></iframe>
+                <div class="desc">Découvrez nos conseils pour une vie saine et les bonnes pratiques à adopter au quotidien.</div>
+            </div>
+            <div class="video-box">
+                <iframe src="https://youtube.com/shorts/ipySKdpw3ac?si=PzcOzE_LiSBXgAx3" title="Nutrition et prévention" allowfullscreen></iframe>
+                <div class="desc">Nutrition, prévention et astuces pour rester en bonne santé en RDC.</div>
+            </div>
+        </div>
+            <div id="yt-error" style="display:none; color:#c00; background:#fff3f3; border-radius:8px; padding:16px; margin:18px 0; text-align:center;">
+                <strong>La connexion à YouTube est bloquée ou non autorisée sur votre réseau.</strong><br>
+                Essayez d'utiliser une connexion différente, un VPN, ou consultez les vidéos directement sur <a href="https://www.youtube.com/" target="_blank">YouTube</a>.
+            </div>
+            <div class="video-container">
+                <div class="video-box">
+                    <iframe src="https://www.youtube.com/embed/1APwq1df6Mw" title="Conseils santé Congo" allowfullscreen onerror="document.getElementById('yt-error').style.display='block';"></iframe>
+                    <div class="desc">Découvrez nos conseils pour une vie saine et les bonnes pratiques à adopter au quotidien.</div>
+                </div>
+                <div class="video-box">
+                    <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Nutrition et prévention" allowfullscreen onerror="document.getElementById('yt-error').style.display='block';"></iframe>
+                    <div class="desc">Nutrition, prévention et astuces pour rester en bonne santé en RDC.</div>
+                </div>
+            </div>
+         <section class="video-grid">
+    <div class="video-box">
+      <iframe src="https://youtu.be/GqqOIoKC66E?si=EhMUDXGwEKQM9IPo" frameborder="0" allowfullscreen></iframe>
+      <p>Prévention contre le paludisme</p>
+    </div>
+
+    <div class="video-box">
+      <iframe src="https://youtu.be/iEChy-pPKZU?si=-j23W6rc91L1D_Br" frameborder="0" allowfullscreen></iframe>
+      <p>Comment bien se laver les mains ?</p>
+    </div>
+
+    <div class="video-box">
+      <iframe src="https://youtu.be/psC2J-zW_Qc?si=WKurEORJVfiKsPjh" frameborder="0" allowfullscreen></iframe>
+      <p>Le rôle de la vaccination</p>
+    </div>
+    
+    <div class="video-box">
+      <iframe src="https://youtu.be/rstQ4mBx44Y?si=x1ZBiFNFql9HKVAU" frameborder="0" allowfullscreen></iframe>
+      <p>Alimentation équilibrée</p>
+  </section>
+    </main>
+    <footer>
+        <div class="dedicace">
+            <p>Congo-santé - Éduquer, sensibiliser et accompagner</p>
+        </div>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./A propos.html">À propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
+            <li><a href="mailto:kabilamerdi95@gmail.com">Contactez-nous</a></li>
+            <li><a href="tel:+243847696293">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243847696293" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="reseau-link">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/" target="_blank" title="Twitter" class="reseau-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" title="Instagram" class="reseau-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        // Exemple JS : Ajout dynamique d'une vidéo (remplacer le lien si besoin)
+        // document.querySelector('.video-container').innerHTML += `
+        //     <div class="video-box">
+        //         <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        //         <div class="desc">Description de la vidéo ajoutée dynamiquement.</div>
+        //     </div>
+        // `;
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidéo</title>
 </head>
 <body>
