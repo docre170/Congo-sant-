@@ -86,6 +86,24 @@
 }
 footer{
         background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+        margin: 0 ;
+        color: #fff;
+            text-align: center;
+            padding: 22px 0 12px 0;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+            margin-top: 38px;
+            border-radius: 16px 16px 0 0;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    text-decoration: none;
+    color: pink;
+}
+ul li a:hover{
+    color: powderblue;
 }
         @media (max-width: 700px) {
             main {
@@ -206,12 +224,12 @@ footer{
     </footer>
     <script>
         // Exemple JS : Ajout dynamique d'une vidéo (remplacer le lien si besoin)
-        // document.querySelector('.video-container').innerHTML += `
-        //     <div class="video-box">
-        //         <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-        //         <div class="desc">Description de la vidéo ajoutée dynamiquement.</div>
-        //     </div>
-        // `;
+         document.querySelector('.video-container').innerHTML += `
+             <div class="video-box">
+                 <iframe src="https://youtube.com/shorts/vHFqrOFae8Y?si=pgUR_2JkcfajA8Sg" allowfullscreen></iframe>
+                 <div class="desc">Description de la vidéo ajoutée dynamiquement.</div>
+             </div>
+        `;
     </script>
 </body>
 </html>
