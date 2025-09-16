@@ -4,8 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Témoignage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4f8cff 0%, #a084ee 100%);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #00c9a7, #92fe9d);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px 24px 20px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+        }
+        .intro, .appel {
+            padding: 20px;
+            text-align: center;
+        }
+        .temoignages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .carte {
+            background: #fff;
+            border-left: 5px solid #0d6efd;
+            padding: 15px 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .fictif {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9em;
+        }
+        a {
+            color: #0d6efd;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #008b7e;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        #logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        footer {
+            background: linear-gradient(to right, #00c9a7, #92fe9d);
+            color: #fff;
+            text-align: center;
+            padding: 22px 0 12px 0;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+            margin-top: 38px;
+            border-radius: 16px 16px 0 0;
+        }
+        nav ul, footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        nav ul li, footer ul li {
+            margin: 0 10px;
+        }
+        @media (max-width: 700px) {
+            .temoignages {
+                flex-direction: column;
+                gap: 16px;
+                padding: 10px;
+            }
+            .carte {
+                width: 95vw;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+            header h1 {
+                font-size: 1.3rem;
+            }
+        }
+        @media (max-width: 500px) {
+            header {
+                padding: 24px 6px 16px 6px;
+            }
+            .carte {
+                padding: 10px 8px;
+            }
+            .logo img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="../images/congo logo.jpg" alt="logo Congo santé" id="logo">
+        <h1>Congo Santé</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="./A propos.html">À propos</a></li>
+                <li><a href="./article sante.html">Articles Santé</a></li>
+                <li><a href="./conseils.html">Conseils</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+                <section class="intro">
+                        <p>Chez Congo Santé, nous croyons au pouvoir du partage d’expériences. Découvrez ici des témoignages inspirants de nos utilisateurs, leurs parcours de soins, et l’impact de notre plateforme dans leur quotidien.</p>
+                </section>
+                <section class="temoignages">
+                        <div class="carte">
+                                <h3>Fatou M. – Kinshasa</h3>
+                                <p>“Grâce à Congo Santé, j’ai pu trouver rapidement un centre de santé proche de chez moi. L’article sur la fièvre typhoïde m’a vraiment aidée.”</p>
+                                <span class="fictif">Témoignage fictif</span>
+                        </div>
+                        <div class="carte">
+                                <h3>Jean-Paul K. – Goma</h3>
+                                <p>“Les conseils sur la nutrition et la prévention m’ont permis d’améliorer ma santé au quotidien. Merci pour cette plateforme.”</p>
+                                <span class="fictif">Témoignage fictif</span>
+                        </div>
+                </section>
+                <section class="appel">
+                        <h2>Partagez votre expérience !</h2>
+                        <p>Vous avez utilisé nos services ? Envoyez-nous votre témoignage à <a href="mailto:kabilamerdi95@gmail.com">kabilamerdi95@gmail.com</a> ou via WhatsApp au <strong>+243 847 696 293</strong>.</p>
+                </section>
+    </main>
+    <footer>
+        <div class="dedicace">
+            <p>Congo-santé - Eduquer,sensibilisé et accompagner</p>
+        </div>
+        <nav>
+            <ul>
+                <li><strong>Liens utiles :</strong></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./A propos.html"> A propos</a></li>
+            </ul>
+        </nav>
+        <ul>
+            <li>&copy; Congo-santé 2025 - Tous droits réservés.</li>
+            <li><a href="mailto:kabilamerdi95@gmail.com"">Contactez-nous</a></li>
+            <li><a href="tel:+243847696293">Appel</a></li>
+        </ul>
+        <div class="reseau">
+            <ul>
+                <li>
+                    <a href="https://wa.me/243847696293" target="_blank" title="WhatsApp" class="reseau-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="reseau-link">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/" target="_blank" title="Twitter" class="reseau-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" target="_blank" title="Instagram" class="reseau-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
