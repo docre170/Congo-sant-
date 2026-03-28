@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> page de Connexion </title>
+    <link rel="stylesheet" href="../css/connexion.css">
+    <style>
+        
+body {
+    background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
+    color: #fff;
+    font-family: 'Roboto', 'Poppins', 'Open Sans', 'Inter', Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cree {
+    text-align: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.presentation {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+fieldset {
+    border: 1px solid #00c6ff;
+    border-radius: 8px;
+    padding: 15px 20px 20px 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+legend {
+    color: #00c6ff;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #928dab;
+    border-radius: 5px;
+    background: #232136;
+    color: #fff;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+    border-color: #00c6ff;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #1e90ff;
+}
+
+
+.link button:hover {
+    background-color: #007bff;
+    box-shadow: 0 0 10px 2px #1f1c2c, 0 0 20px 4px #928dab;
+    border-radius: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
+    margin-bottom: 0;
+    padding: 32px 0 0 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;   
+    color: #fff;
+}
+
+.contact {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.contenir {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.contenir h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.dedi {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.95em;
+}
+.link {
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.link ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.link li {
+    list-style: none;
+}
+
+.link button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745;
+    color: #fff;
+    margin: 0;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    animation: bril 3s infinite alternate;
+}
+@keyframes bril {
+    0% {
+        box-shadow: 0 0 10px 2px #00c9a7 0% , 0 0 20px 4px  #92fe9d 100%;
+    }
+
+    100% {
+        box-shadow: 0 0 30px 10px #03fe78, 0 0 60px 20px #03fe78;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 800px) {
+    main {
+        max-width: 98vw;
+        padding: 10px 2vw;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contenir {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .presentation {
+        padding: 15px 5px;
+    }
+
+    .link ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact {
+        padding: 0 5px;
+    }
+}
+    </style>
+</head>
+<body>
+<header class="cree">
+    <h1>  Creér votre compte</h1>
+    <p> Veuillez vous s'inscrire pour profitez de nos services</p>
+</header>
+<main>
+    <marquee behavior="scroll" direction="left"> Bienvenue dans le formulaire d'inscription</marquee>
+    <section class="presentation">
+        <form action="https://formsubmit.co/credokutanga170@gmail.com" method="post" enctype="multipart/form-data"> 
+            <fieldset>
+                <legend>Informations personnelles</legend>
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" placeholder="Écrivez votre nom" required><br><br>
+                <label for="post-nom">Post-nom :</label>
+                <input type="text" name="post-nom" placeholder="Écrivez votre post-nom" required><br><br>
+                <label for="naissance">Date de naissance :</label>
+                <input type="date" id="naissance" required><br><br>
+                
+                <fieldset>
+                    <legend>Contact</legend>
+                    <label for="password">Mot de passe :</label>
+                    <input autocomplete="off" type="password" name="password" id="password" placeholder="Mot de passe" required /><br>
+                    <ul>Contact : <br>
+                        <li>
+                            <label for="contact">Téléphone :</label>
+                            <input type="tel" name="contact" id="contact" required placeholder="+243901057433"> <br><br>
+                        </li>
+                        <li>
+                            <label for="email">E-mail :</label>
+                            <input type="email" name="email" id="email" placeholder="credokutang@gmail.com" required>
+                        </li>
+                    </ul>
+                    <input type="submit" id="connecter" value="Continuer">
+                </fieldset>
+                </fieldset>
+                </form>
+                </section>
+                <section class="link">
+                    <nav class="navb">
+                        <ul>
+                            <li>
+                                <button><a href="./inscription2.html">Se connecter</a></button><br>
+                            </li>
+                            <li>
+                                <button><a href="./pub.html">Retour en arrière</a></button>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+        </form>
+</main>
+
+    <script src="../javascript/connexion.js"></script>
+</body>
+</html>

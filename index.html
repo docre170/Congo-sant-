@@ -9,6 +9,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
         body {
             background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
             margin: 0;
@@ -298,33 +302,8 @@
             padding: 32px 0 0 0;
             box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
             position: relative;
-            overflow: hidden;
-            margin-top: 32px;
+            overflow: hidden;   
             color: #fff;
-        }
-
-        footer::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-        }
-
-        .foot {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto 24px auto;
-        }
-
-        .foot > div {
-            flex: 1 1 220px;
-            min-width: 200px;
         }
 
         footer h2 {
@@ -336,12 +315,11 @@
 
         footer ul, footer ol {
             padding-left: 18px;
-            margin: 0 0 8px 0;
+            display: inline-block;
         }
 
         footer ul li, footer ol li {
             list-style: circle;
-            margin-bottom: 6px;
             font-size: 1rem;
         }
 
@@ -429,9 +407,34 @@
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    transition: color 0.2s, color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
 }
-
+.decou {
+    color: #4f8cff;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 10pX;
+}
+.serv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     gap: 24px;
+}
+.demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     gap: 24px;
+}
+.quest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     gap: 24px;
+}
         @media (max-width: 900px) {
             .foot {
                 flex-direction: column;
@@ -493,73 +496,34 @@
         <nav class="navbar">
             <button id="hamburger" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
             <div class="menu-links">
-                <a href="./index.html">Accueil</a>
+                <a href="#">Accueil</a>
                 <a href="./codebase/html/A propos.html">A propos</a>
                 <a href="./codebase/html/article sante.html">Article santé</a>
                 <a href="./codebase/html/conseil et prevention.html">Conseils et prévention</a>
-                <a href="./codebase/html/temoignage.html">Témoignages</a>
-                <a href="./codebase/html/video.html">Vidéo</a>
+                <a href="./codebase/html/connexion.html">connexion</a>
                 <a href="./codebase/html/faq.html">FAQ</a>
                 <a href="./codebase/html/contact.html">Contact</a>
             </div>
         </nav>
     </header>
     <main>
-        <section>
+        <section class="serv">
             <div data-aos="fade-right">
-                <h1 class="con"> Bienvenue sur Congo-Santé</h1>
+                <h2 class="con"> Bienvenue sur Congo-Santé</h2>
+            </div>   
+            <div class="hero">
+                <img src="../Congo/codebase/images/photo1.jpeg" alt="image interactive" class="ero">
+                <p>
+                    <b>Congo Santé</b> est une plateforme numérique dédiée à la santé publique en République Démocratique du Congo. Elle permet à tous les citoyens d’accéder à une information médicale claire, de prendre rendez-vous avec des professionnels, et de partager leurs expériences dans un forum communautaire.
+                </p>
             </div>
             <div>
                 <button>
-                    <a href="./codebase/html/service.html">Découvrir nos services</a>
+                    <a href="./codebase/html/services.html" class="decou">Découvrir nos services</a>
                 </button>
             </div>
-            <br> <br>
-            <div class="hero">
-                <img src="../Congo/codebase/images/photo1.jpeg" alt="image interactive" class="ero">
-            <p>
-                > "<b>Congo Santé</b> est une plateforme numérique dédiée à la santé publique en République Démocratique du Congo. Elle permet à tous les citoyens d’accéder à une information médicale claire, de prendre rendez-vous avec des professionnels, et de partager leurs expériences dans un forum communautaire."
-            </p>
-        </div>
         </section>
-        <section>
-        <div class="présentation">
-            <h1>
-                Nos Services
-            </h1>
-             <p>
-                <img src="./codebase/images/slogan.jpeg" alt="" class="ero">
-
-            </p>
-            <p>
-                <ul>
-                    <li>
-                        - 📚 Informations médicales 
-                    </li>
-                    <li>
-                        - 🩺 Prise de rendez-vous en ligne
-                    </li>
-                    <li>
-                        - 💡 Conseils santé 
-                    </li>
-                    <li>
-                        - 🏥 Orientation vers des structures de soins  
-                    </li>
-
-                </ul>
-            </p>
-            <p>
-                <button>
-                    <a href="./codebase/html/article sante.html">
-                        lire un article
-                    </a>
-                </button>
-            </p>
-           
-        </div>
-        </section>
-        
-        <section>
+        <section class="demo">
         <div class="apercu" style="padding: 20px; font-family: Arial, sans-serif;">
             <h2>Les maladies courantes : ce qu’il faut savoir pour mieux les éviter</h2>
             <p>Nous tombons tous malades de temps en temps. Mais certaines maladies reviennent souvent et touchent
@@ -587,15 +551,13 @@
             <p><strong>Prévention :</strong> moustiquaire, spray anti-moustique, éliminer l’eau stagnante.</p>
             <p>
                 <button>
-                    <a href="./codebase/html/conseil et prevention.html">
-                        En savoir plus
-                    </a>
+                    <a href="./codebase/html/conseil et prevention.html"> En savoir plus </a>
                 </button>
             </p>
         </div>
         </section>
 
-        <section>
+        <section class="quest">
         <div class="rubrique">
             <h2>
                 Avez-vous des questions ?
@@ -603,11 +565,13 @@
             <p>
                 Si , vous avez des questions n'hésitez surtout pas à nous contacter ou à nous écrire grâce à notre page
                 <a href="./codebase/html/faq.html"> <strong> FAQ </strong> </a>
-                . <br>
+            </p>
+            <p>
                 Nous sommes là pour vous et surtout n'oubliez pas ; <i> <span>"Un dépistage à temps peut sauver une
                         vie." et " La vaccination protège vous et ceux que vous aimez."</span> </i> <big> Congo-santé .
                 </big>
             </p>
+                
         </div>
         </section>
     </main>
@@ -620,7 +584,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="./index.html">Accueil</a>
+                        <a href="#">Accueil</a>
                     </li>
                     <li>
                         <a href="./codebase/html/article sante.html">Articles</a>
@@ -637,10 +601,10 @@
             </h2>
             <ol>
                 <li>
-                    <a href="mailto:kabilamerdi95@gmail.com"> Notre adresse email : congo-santé </a>
+                    <a href="mailto:kabilamerdi95@gmail.com"> Contactez-nous</a>
                 </li>
                 <li>
-                    <a href="tel:+243847696293"> Notre numero telephone: 0847696293</a>
+                    <a href="tel:+243847696293"> Appelez-nous</a>
                 </li>
             </ol>
         </div>
@@ -652,23 +616,13 @@
                 <li>
                     <a href="">Whatsapp</a>
                 </li>
-                <li>
-                    <a href="">Facebook</a>
-                </li>
-                <li>
-                    <a href="">Télegrame</a>
-                </li>
-                <li>
-                    <a href=""> Tik-Tok</a>
-                </li>
-                <li>
-                    <a href=""> Instagrame</a>
-                </li>
+              
             </ul>
         </div>
     </div>
         <div class="copy">
             &copy; Congo-santé 2025 -- RDC
+         - Tous droits réservés.
         </div>
     </footer>
 </body>
@@ -711,13 +665,17 @@ function f(){
         document.fo.horloge.value=h+sep+m+sep+s;
 }
 function i(){
-    function over(){
-        document.images[1].src="../photo/logo2.jpg";
-    }
-    function out(){
-        document.images[0].src="../photo/codeur.jpg"
+    const heroImage = document.querySelector('.ero');
+    if (heroImage) {
+        heroImage.addEventListener('mouseover', function() {
+            this.src="./codebase/images/photo2.jpeg";
+        });
+        heroImage.addEventListener('mouseout', function() {
+            this.src="./codebase/images/congo logo.jpg";
+        });
     }
 }
+i();
 </script>
 
 </html>
