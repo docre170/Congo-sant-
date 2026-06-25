@@ -1,0 +1,420 @@
+:root {
+    --header-bg: #639871;
+    --hero-bg: #579066;
+    --button-bg: #014F31;
+    --button-hover: #023d26;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+main.appointment-page {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    min-height: calc(100vh - 200px);
+}
+
+/* Section Hero */
+.appointment-hero {
+    background: linear-gradient(135deg, var(--hero-bg) 0%, #4a7c56 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.appointment-hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.appointment-hero p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Section Formulaire */
+.appointment-form-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.form-container h2 {
+    font-size: 1.8em;
+    color: var(--hero-bg);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.appointment-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+fieldset.active {
+    display: block;
+}
+
+fieldset legend {
+    font-size: 1.3em;
+    color: var(--hero-bg);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-group.checkbox input {
+    width: auto;
+    margin-top: 4px;
+}
+
+.form-group.checkbox label {
+    margin: 0;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.radio-label input {
+    width: auto;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--button-bg);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.btn-submit {
+    background-color: var(--button-bg);
+    color: white;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--button-hover);
+}
+
+.confirmation-summary {
+    background: #f0f8f4;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--button-bg);
+    margin-top: 20px;
+}
+
+.confirmation-summary h3 {
+    color: var(--hero-bg);
+    margin-bottom: 10px;
+}
+
+.confirmation-summary p {
+    color: #555;
+    margin: 0;
+}
+
+/* Sidebar Informations */
+.appointment-info {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.appointment-info h3 {
+    font-size: 1.3em;
+    color: var(--hero-bg);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.info-box {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-box:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-box h4 {
+    font-size: 1.05em;
+    color: var(--button-bg);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-box li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.info-box p {
+    color: #555;
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-bg);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+/* Section FAQ */
+.appointment-faq {
+    margin-bottom: 30px;
+}
+
+.appointment-faq h2 {
+    font-size: 2em;
+    color: var(--hero-bg);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.faq-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.faq-item h3 {
+    font-size: 1.1em;
+    color: var(--hero-bg);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.faq-item p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main.appointment-page {
+        padding: 20px 15px;
+    }
+
+    .appointment-hero {
+        padding: 40px 20px;
+    }
+
+    .appointment-hero h1 {
+        font-size: 1.8em;
+    }
+
+    .appointment-form-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .appointment-info {
+        height: auto;
+    }
+
+    .form-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-faq h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    main.appointment-page {
+        padding: 15px 10px;
+    }
+
+    .appointment-hero {
+        padding: 30px 15px;
+    }
+
+    .appointment-hero h1 {
+        font-size: 1.5em;
+    }
+
+    .appointment-hero p {
+        font-size: 1em;
+    }
+
+    .appointment-form {
+        padding: 20px;
+    }
+
+    .appointment-info {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .faq-item {
+        padding: 20px;
+    }
+}
