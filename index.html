@@ -2,680 +2,108 @@
 <html lang="fr">
 
 <head>
+    <!-- LES metadonnées -->
     <meta charset="UTF-8">
-    <title> index </title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background: linear-gradient(120deg, #00c9a7 0%, #92fe9d 100%);
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-            color: #222;
-            min-height: 100vh;
-        }
-        .con{
-            text-align: center;
-        }
-        header {
-            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 24px;
-            padding: 0 0 10px 0;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-        }
-
-        .intro {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-            padding: 24px 0 10px 0;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
-        }
-
-        .ima {
-            height: 90px;
-            width: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin: 0;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            color: #fff;
-        }
-
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            background: rgba(255, 255, 255, 0.13);
-            padding: 12px 0;
-            backdrop-filter: blur(6px);
-            border-radius: 10px;
-            margin: 0 auto;
-            max-width: 92%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            position: relative;
-        }
-        #hamburger {
-            display: none;
-            font-size: 2rem;
-            cursor: pointer;
-            margin-right: 18px;
-            background: none;
-            border: none;
-            color: #008b7e;
-        }
-        #hamburger.active {
-            color: #00c9a7;
-        }
-        .menu-links {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        .menu-links a {
-            text-decoration: none;
-            color: #008b7e;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 8px 18px;
-            border-radius: 22px;
-            background: rgba(255,255,255,0.92);
-            transition: all 0.25s cubic-bezier(.4,0,.2,1);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        }
-        .menu-links a:hover {
-            background: #fff;
-            color: #00c9a7;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
-        }
-
-        @media (max-width: 900px) {
-            .navbar {
-                justify-content: flex-end;
-            }
-            .menu-links {
-                gap: 6px;
-            }
-            .menu-links a {
-                font-size: 0.98rem;
-                padding: 8px 10px;
-            }
-        }
-        @media (max-width: 700px) {
-            .navbar {
-                justify-content: flex-end;
-            }
-            #hamburger {
-                display: block;
-            }
-            .menu-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background: rgba(255,255,255,0.98);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-                border-radius: 0 0 10px 10px;
-                width: 200px;
-                z-index: 100;
-                padding: 10px 0;
-                align-items: flex-start;
-            }
-            .menu-links.active {
-                display: flex;
-            }
-            .menu-links a {
-                color: #008b7e;
-                background: none;
-                width: 100%;
-                border-radius: 0;
-                padding: 12px 18px;
-                box-shadow: none;
-                text-align: left;
-            }
-            .menu-links a:hover {
-                background: #e6f9f5;
-                color: #00c9a7;
-                transform: none;
-                box-shadow: none;
-            }
-        }
-
-        main {
-            margin-bottom: 30px;
-        }
-
-        section {
-            margin-bottom: 36px;
-            background: rgba(0,139,126,0.93);
-            border-radius: 14px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            padding: 32px 36px 28px 36px;
-            color: #fff;
-            transition: box-shadow 0.2s;
-        }
-
-        section:hover {
-            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            justify-content: flex-start;
-        }
-
-        .ero {
-            width: 220px;
-            height: 220px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .présentation img.ero {
-            margin-top: 18px;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-            margin: 0 0 12px 0;
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 2.3rem;
-            color: #fff;
-            text-align: center;
-            letter-spacing: 1.2px;
-            margin-bottom: 18px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-left: 0;
-            padding: 0 0 12px 0;
-            color: #ffeb3b;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
-        }
-
-        h3 {
-            text-decoration: underline;
-            text-transform: capitalize;
-            margin-right: 0;
-            padding: 10px 0 6px 0;
-            color: #feb47b;
-        }
-
-        span {
-            color: #ffeb3b;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        p {
-            text-indent: 0;
-            padding: 10px 0;
-            font-family: Arial, sans-serif;
-            font-size: 1.08rem;
-            line-height: 1.7;
-        }
-
-        main a {
-            text-decoration: underline;
-            color: #ffeb3b;
-            transition: color 0.2s;
-        }
-
-        main a:hover {
-            color: #feb47b;
-            text-decoration: underline wavy;
-        }
-
-        button {
-            margin: 0 0 0 0;
-            padding: 8px 22px;
-            border: none;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.93);
-            cursor: pointer;
-            transition: all 0.25s cubic-bezier(.4,0,.2,1);
-            font-weight: 600;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            display: inline-block;
-        }
-
-        button:hover {
-            background: #fff;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
-        }
-
-        button a {
-            text-decoration: none;
-            color: #008b7e;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        button:hover a {
-            color: #00c9a7;
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        footer {
-            background: linear-gradient(135deg, #00c9a7 0%, #008b7e 100%);
-            margin-bottom: 0;
-            padding: 32px 0 0 0;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;   
-            color: #fff;
-        }
-
-        footer h2 {
-            color: #ffeb3b;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            padding: 0;
-        }
-
-        footer ul, footer ol {
-            padding-left: 18px;
-            display: inline-block;
-        }
-
-        footer ul li, footer ol li {
-            list-style: circle;
-            font-size: 1rem;
-        }
-
-        footer ul li:hover, footer ol li:hover {
-            list-style: disc;
-            color: #feb47b;
-        }
-
-        footer ul li a, footer ol a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.2s;
-        }
-
-        footer ul li a:hover, footer ol a:hover {
-            color: #ffeb3b;
-            text-decoration: underline wavy;
-        }
-
-        .copy {
-            text-align: center;
-            font-weight: bold;
-            padding: 12px 0 8px 0;
-            color: #fff;
-            background: rgba(0,0,0,0.07);
-            border-radius: 0 0 10px 10px;
-            font-size: 1.08rem;
-            letter-spacing: 1px;
-        }
-
-        .copy:hover {
-            color: #ffeb3b;
-        }
-        #hamburger {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: 10px;
-    background: none;
-    border: none;
-    color: white;
-}
-#hamburger.active {
-    color: #4f8cff;
-}
-#hamburger:hover {
-    color: #2d6cdf;
-}
-#photo {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.reseau ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 10px 0 0 0;
-    list-style: none;
-}
-
-.reseau-link {
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-     display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.2s;
-}
-
-.reseau-link:hover {
-    color: #4f8cff;
-}
-
-.reseau i {
-    font-size: 1.5rem;
-}
-.bouton{
-    display: inline-block;
-    background: #4f8cff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: color 0.2s, background-color 0.2s;
-}
-.decou {
-    color: #4f8cff;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-left: 10pX;
-}
-.serv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     gap: 24px;
-}
-.demo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     gap: 24px;
-}
-.quest {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     gap: 24px;
-}
-        @media (max-width: 900px) {
-            .foot {
-                flex-direction: column;
-                gap: 18px;
-                align-items: flex-start;
-            }
-            .intro {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .hero {
-                flex-direction: column;
-                gap: 16px;
-            }
-            section {
-                padding: 18px 10px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .navbar nav {
-                flex-direction: column;
-                gap: 6px;
-            }
-            .foot {
-                gap: 10px;
-            }
-            .ero {
-                width: 100%;
-                height: auto;
-                max-width: 100%;
-            }
-            .ima {
-                width: 60px;
-                height: 60px;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CongoVital - Santé Congo</title>
+    <!-- lien pour utiliser le bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./frontend/css/common.css">
+    <link rel="stylesheet" href="./frontend/css/index.css">
 </head>
 
-<!-- onload="f()" sert à appeler la fonction -->
-<body onload="f()">
-  <header>
-    <form action="" name="fo">
-      <input type="text" name="horloge" size="8" style="font-family: 'Courier New', Courier, monospace;">
-    </form>
-        <div class="intro">
-            <img src="./codebase/images/congo logo.jpg" alt="logo de notre entreprise" class="ima">
-            <h1>
-                Congo-santé
-            </h1>
+<body>
+    <!-- en tete du travail -->
+    <header>
+        <div class="logo">
+            <img src="./photos/logo.jpg" alt="Logo CongoVital" width="100" height="85">
+            <h1>CongoVital</h1>
         </div>
-        <nav class="navbar">
-            <button id="hamburger" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
-            <div class="menu-links">
-                <a href="#">Accueil</a>
-                <a href="./codebase/html/A propos.html">A propos</a>
-                <a href="./codebase/html/article sante.html">Article santé</a>
-                <a href="./codebase/html/conseil et prevention.html">Conseils et prévention</a>
-                <a href="./codebase/html/connexion.html">connexion</a>
-                <a href="./codebase/html/faq.html">FAQ</a>
-                <a href="./codebase/html/contact.html">Contact</a>
-            </div>
+        <nav class="navi">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="./frontend/html/services.html">Services</a></li>
+                <li><a href="./frontend/html/prevention.html">Prévention</a></li>
+                <li><a href="./frontend/html/contact.html">Contact</a></li>
+                <li><a href="./frontend/html/abonne.html">Abonné</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        <section class="serv">
-            <div data-aos="fade-right">
-                <h2 class="con"> Bienvenue sur Congo-Santé</h2>
-            </div>   
-            <div class="hero">
-                <img src="../Congo/codebase/images/photo1.jpeg" alt="image interactive" class="ero">
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <h2>Notre mission </h2>
+                <p>Vous informez et accédez aux soins essentiels pour une meilleure santé</p>
+                <a href="./frontend/html/services.html" class="btn button" style="margin-bottom: 6px;">En savoir
+                    plus</a>
+                <a href="./frontend/html/abonne.html" class="btn button">Vous connectez</a>
+            </div>
+            <div class="hero-image">
+                <img src="./photos/docteur.jpg" alt="Médecin">
+            </div>
+        </section>
+
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <h2>A propos de nous </h2>
+                <p> Bienvenue dans notre app web , <span> CongoVital </span> une application des sensibilisations ;
+                    prevention et prise de rendez-vous </p>
                 <p>
-                    <b>Congo Santé</b> est une plateforme numérique dédiée à la santé publique en République Démocratique du Congo. Elle permet à tous les citoyens d’accéder à une information médicale claire, de prendre rendez-vous avec des professionnels, et de partager leurs expériences dans un forum communautaire.
+                    <a href="./frontend/html/pages/apropos.html" class="btn">En savoir plus</a>
                 </p>
+
             </div>
-            <div>
-                <button>
-                    <a href="./codebase/html/services.html" class="decou">Découvrir nos services</a>
-                </button>
+            <div class="hero-image">
+                <img src="./photos/logo.jpg" alt="logo">
             </div>
         </section>
-        <section class="demo">
-        <div class="apercu" style="padding: 20px; font-family: Arial, sans-serif;">
-            <h2>Les maladies courantes : ce qu’il faut savoir pour mieux les éviter</h2>
-            <p>Nous tombons tous malades de temps en temps. Mais certaines maladies reviennent souvent et touchent
-                beaucoup de personnes. Ce sont ce qu’on appelle <strong>les maladies courantes</strong>. Connaître ces
-                maladies permet de mieux les prévenir et de mieux réagir quand elles arrivent.</p>
 
-            <h3>1. Le rhume</h3>
-            <ul>
-                <li>Nez qui coule ou bouché</li>
-                <li>Maux de gorge</li>
-                <li>Éternuements</li>
-                <li>Parfois fièvre légère</li>
-            </ul>
-            <p><strong>Prévention :</strong> se laver les mains souvent, éviter de se toucher le visage, bien se
-                couvrir.</p>
-            <p><em>Bon à savoir :</em> le rhume ne se soigne pas avec des antibiotiques.</p>
+        <section class="services" id="services">
+            <article class="service-card">
+                <img src="./photos/vaccination.jpg" alt="Vaccination">
+                <h2>Vaccination</h2>
+                <p>Protégez-vous et votre communauté grâce à la vaccination</p>
+                <a href="./frontend/html/pages/vaccination.html" class="btn">En savoir plus</a>
+            </article>
 
-            <h3>2. Le paludisme (malaria)</h3>
-            <ul>
-                <li>Fièvre élevée</li>
-                <li>Frissons</li>
-                <li>Douleurs au corps</li>
-                <li>Fatigue intense</li>
-            </ul>
-            <p><strong>Prévention :</strong> moustiquaire, spray anti-moustique, éliminer l’eau stagnante.</p>
-            <p>
-                <button>
-                    <a href="./codebase/html/conseil et prevention.html"> En savoir plus </a>
-                </button>
-            </p>
-        </div>
+            <article class="service-card">
+                <img src="./photos/maternite.jpg" alt="Maternité">
+                <h2>Maternité</h2>
+                <p>Soins de santé pour les mères et les bébés</p>
+                <a href="./frontend/html/pages/maternité.html" class="btn">En savoir plus</a>
+            </article>
+
+            <article class="service-card">
+                <img src="./photos/prevention.jpg" alt="Prévention">
+                <h2>Prévention</h2>
+                <p>Protégez-vous contre les maladies grâce à la prévention</p>
+                <a href="./frontend/html/prevention.html" class="btn">En savoir plus</a>
+            </article>
         </section>
 
-        <section class="quest">
-        <div class="rubrique">
-            <h2>
-                Avez-vous des questions ?
-            </h2>
-            <p>
-                Si , vous avez des questions n'hésitez surtout pas à nous contacter ou à nous écrire grâce à notre page
-                <a href="./codebase/html/faq.html"> <strong> FAQ </strong> </a>
-            </p>
-            <p>
-                Nous sommes là pour vous et surtout n'oubliez pas ; <i> <span>"Un dépistage à temps peut sauver une
-                        vie." et " La vaccination protège vous et ceux que vous aimez."</span> </i> <big> Congo-santé .
-                </big>
-            </p>
-                
-        </div>
+        <section>
+            <div class="hero-stats">
+                <h2>Presentations</h2>
+                <div class="stat">
+                    <span class="stat-number">1+</span>
+                    <span class="stat-label">Semaine d'expertise </span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0k</span>
+                    <span class="stat-label">Patient soignés</span>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <div class="foot">
-        <div>
-            <h2>
-                Lien Utile :
-            </h2>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="./codebase/html/article sante.html">Articles</a>
-                    </li>
-                    <li>
-                        <a href="./codebase/html/contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div>
-            <h2>
-                Adresse email et contact :
-            </h2>
-            <ol>
-                <li>
-                    <a href="mailto:kabilamerdi95@gmail.com"> Contactez-nous</a>
-                </li>
-                <li>
-                    <a href="tel:+243847696293"> Appelez-nous</a>
-                </li>
-            </ol>
-        </div>
-        <div>
-            <h2>
-                Réseaux sociaux :
-            </h2>
-            <ul>
-                <li>
-                    <a href="">Whatsapp</a>
-                </li>
-              
-            </ul>
-        </div>
-    </div>
-        <div class="copy">
-            &copy; Congo-santé 2025 -- RDC
-         - Tous droits réservés.
-        </div>
+        <p>&copy; 2026 CongoVital. Tous droits réservés.</p>
+        <p> <span style="color: floralwhite;"> Toujours voir le monde sous un autre onglet car chaque perspective peut
+                ouvrir une nouvelle fenetre sur la réalité</span> -- <strong>D170</strong></p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
-<script>
-// Hamburger menu responsive
-const hamburger = document.getElementById('hamburger');
-const menuLinks = document.querySelector('.menu-links');
-
-function toggleMenu() {
-        hamburger.classList.toggle('active');
-        menuLinks.classList.toggle('active');
-}
-hamburger.addEventListener('click', toggleMenu);
-
-// Fermer le menu quand on clique sur un lien (mobile UX)
-menuLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-                menuLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-        });
-});
-
-// ...existing code for horloge and image hover...
-function f(){
-        d=new Date();
-        console.log("c'est l 'annee " + d.getFullYear());
-        console.log(d.getMonth());
-        setTimeout("f()", 1000);
-        e=new Date();
-        h=e.getHours();
-        m=d.getMinutes();
-        s=d.getSeconds();
-        if(s%2==0)
-            sep=":";
-        else
-             sep="-";
-        if (h<10)  h="0"+h;
-        if (m<10)  m="0"+m;
-        if (s<10)  s="0"+s;
-        document.fo.horloge.value=h+sep+m+sep+s;
-}
-function i(){
-    const heroImage = document.querySelector('.ero');
-    if (heroImage) {
-        heroImage.addEventListener('mouseover', function() {
-            this.src="./codebase/images/photo2.jpeg";
-        });
-        heroImage.addEventListener('mouseout', function() {
-            this.src="./codebase/images/congo logo.jpg";
-        });
-    }
-}
-i();
-</script>
 
 </html>
